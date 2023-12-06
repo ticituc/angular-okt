@@ -1,0 +1,17 @@
+version: "3"
+services:
+    angular-devserver:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        image: angular/node
+        container_name: angular-node
+        #restart: unless-stopped
+        restart: "no"
+        tty: true
+        ports:
+            - "4000:4000"
+        volumes:
+            - ./:/angular
+        #networks:
+

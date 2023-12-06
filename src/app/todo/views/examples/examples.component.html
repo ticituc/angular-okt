@@ -1,0 +1,83 @@
+<div class="example-hero">
+    <ng-content></ng-content>
+</div>
+
+<mat-divider></mat-divider>
+
+<h1>Control flows</h1>
+
+<button (click)="changePokemon()">Toggle Charmander</button>
+<div *ngIf="isCharmander; else other">
+  This is an Charmander!
+</div>
+<ng-template #other>
+  This is not an Charmander!
+</ng-template>
+
+<h1>Let's Lern the new control flows</h1>
+<button (click)="changePokemon()">Toggle Charmander</button>
+@if (isCharmander) {
+<p>This is an Charmander</p>
+} @else {
+<p>This is not an Charmander</p>
+}
+
+
+<div [ngSwitch]="pokemon">
+  <p *ngSwitchCase="'Charmander'">You selected an Charmander.</p>
+  <p *ngSwitchCase="'Pikatchu'">You selected an Pikatchu.</p>
+  <p *ngSwitchCase="'Bulbasaur'">You selected a Bulbasaur.</p>
+  <p *ngSwitchDefault>Unknown pokemon.</p>
+</div>
+
+
+@switch (pokemon) {
+@case ('Charmander') { <p>You selected an Charmander.</p> }
+@case ('Pikatchu') { <p>You selected an Pikatchu.</p> }
+@case ('Bulbasaur') { <p>You selected a Bulbasaur.</p> }
+@default { <p>Unknown pokemon.</p> }
+}
+
+
+<h1>Let's Lern the new control flows</h1>
+<div *ngFor="let pokemon of pokemons">
+  <ul>
+    <li>{{pokemon}}</li>
+  </ul>
+</div>
+
+
+<h1>Let's Lern the new control flows</h1>
+@for (pokemon of pokemons; track $index) {
+<ul>
+  <li>{{pokemon}}</li>
+</ul>
+} @empty {
+Empty list of pokemons
+}
+
+
+@defer {
+  <app-posts></app-posts>
+} @placeholder {
+  <div>App Posts-placeholder</div>
+}
+@loading (after 100ms; minimum 1s) {
+  <mat-icon aria-hidden="false" aria-label="Loading..." fontIcon="loading"></mat-icon>
+}
+
+Deffer with events: 
+@defer (on timer(500ms)) {
+
+  <app-posts></app-posts>
+}
+
+@defer (on interaction; prefetch on idle) {
+  <app-posts></app-posts>
+} @placeholder {
+    <mat-icon aria-hidden="false" aria-label="Loading..." fontIcon="loading"></mat-icon>
+}
+
+
+<ng-content select="[footer]"></ng-content>
+
