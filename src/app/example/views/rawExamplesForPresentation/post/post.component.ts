@@ -9,18 +9,18 @@ import { MatButtonModule } from '@angular/material/button';
   imports: [MatListModule, MatButtonModule],
   templateUrl: './post.component.html',
   styleUrl: './post.component.scss',
-  animations: [       // metadata array
-    trigger('toggleClick', [     // trigger block
-      state('true', style({      // final CSS following animation
-        backgroundColor: 'green'
-      })),
-      state('false', style({
-        backgroundColor: 'red'
-      })),
-      transition('true => false', animate('1000ms linear')),  // animation timing
-      transition('false => true', animate('1000ms linear'))
-    ])
-  ]
+  //animations: [       // metadata array
+  //  trigger('toggleClick', [     // trigger block
+  //    state('true', style({      // final CSS following animation
+  //      backgroundColor: 'green'
+  //    })),
+  //    state('false', style({
+  //      backgroundColor: 'red'
+  //    })),
+  //    transition('true => false', animate('1000ms linear')),  // animation timing
+  //    transition('false => true', animate('1000ms linear'))
+  //  ])
+  //]
 })
 export class PostComponent {
 

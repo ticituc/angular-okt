@@ -4,7 +4,7 @@ import { RouterOutlet } from '@angular/router';
 
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-import { PostsComponent } from '../posts/posts.component';
+import { PostsComponent } from '../rawExamplesForPresentation/posts/posts.component';
 import {MatDividerModule} from '@angular/material/divider';
 
 

@@ -2,6 +2,7 @@ import { AfterViewInit, Component, QueryList, ViewChild, ViewChildren, ViewConta
 import { MatListModule } from '@angular/material/list';
 import { PostComponent } from '../post/post.component';
 
+
 @Component({
   selector: 'app-posts',
   standalone: true,
@@ -25,11 +26,6 @@ export class PostsComponent implements AfterViewInit {
   }
 
   ngAfterViewInit() {
-    console.log("View COntainer Ref example", this.post);
-    console.log("ngAfterViewInit", this.posts);
-    if (this.posts) {
-      this.posts.forEach((posts) => { console.log(posts); });
-    }
 
   }
 
